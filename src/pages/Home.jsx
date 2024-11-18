@@ -89,9 +89,9 @@ export const Home = () => {
             </Canvas>
           </div>
         </div>
-        <div className='canvas' style={{ height: '100vh', marginTop: '-80px' }}>
+        <div className='canvas' style={{ height: '100vh', marginTop: '50px' }}>
           <Canvas shadows
-            camera={{ fov: 70, position: [0, 0.5 , 0.6]}}
+            camera={{ fov: 60, position: [0, 0.5 , 0.6]}}
           >
             <Suspense fallback={<Loader />}>
               <directionalLight position={[1, 1, 1]} intensity={2} />

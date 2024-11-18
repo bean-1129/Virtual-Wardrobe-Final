@@ -67,7 +67,11 @@ overflow: hidden;
   
 }
 .canvas{
-  
+  /* background-image: url('./src/imgs/ramp.jpg');
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  background-size: 700px;
+  background-position: -10vh 10vh; */
   width: 40%;
 }
 
