@@ -1,0 +1,222 @@
+[
+    {
+        "Event": "Wedding",
+        "Indian Attire": {
+            "Male": "Sherwani, Kurta-Pajama, Jodhpuri Suit",
+            "Female": "Lehenga, Anarkali, Saree"
+        },
+        "Western Attire": {
+            "Male": "Suit and Tie, Blazer with Dress Pants",
+            "Female": "Cocktail Dress, Evening Gown"
+        }
+    },
+    {
+        "Event": "Office",
+        "Indian Attire": {
+            "Male": "Formal Kurta with Trousers, Nehru Jacket",
+            "Female": "Plain Saree, Salwar Suit"
+        },
+        "Western Attire": {
+            "Male": "Business Casual, Formal Suit",
+            "Female": "Blazer and Trousers, Formal Dress"
+        }
+    },
+    {
+        "Event": "Party",
+        "Indian Attire": {
+            "Male": "Indo-Western Kurta, Dhoti Kurta",
+            "Female": "Crop Top with Long Skirt, Palazzo Suit"
+        },
+        "Western Attire": {
+            "Male": "Casual Blazer with Trousers, Dress Shirt",
+            "Female": "Party Dress, Stylish Top with Jeans"
+        }
+    },
+    {
+        "Event": "Sports",
+        "Indian Attire": {
+            "Male": "Track Suit, Sweatpants and T-Shirt",
+            "Female": "Track Suit, Sweatpants and T-Shirt"
+        },
+        "Western Attire": {
+            "Male": "Athletic Wear, Shorts and T-Shirt",
+            "Female": "Athletic Wear, Shorts and T-Shirt"
+        }
+    },
+    {
+        "Event": "Formal Dinner",
+        "Indian Attire": {
+            "Male": "Bandhgala, Kurta with Churidar",
+            "Female": "Silk Saree, Designer Salwar Suit"
+        },
+        "Western Attire": {
+            "Male": "Tuxedo, Formal Suit",
+            "Female": "Evening Gown, Formal Dress"
+        }
+    },
+    {
+        "Event": "Casual Outing",
+        "Indian Attire": {
+            "Male": "Cotton Kurta, Casual Pajama",
+            "Female": "Kurti with Leggings, Casual Saree"
+        },
+        "Western Attire": {
+            "Male": "T-Shirt with Jeans, Casual Shirt",
+            "Female": "T-Shirt with Jeans, Casual Dress"
+        }
+    },
+    {
+        "Event": "Festival",
+        "Indian Attire": {
+            "Male": "Kurta with Dhoti, Pathani Suit",
+            "Female": "Traditional Saree, Lehenga Choli"
+        },
+        "Western Attire": {
+            "Male": "Smart Casuals, Polo Shirt with Trousers",
+            "Female": "Floral Dress, Maxi Skirt"
+        }
+    },
+    {
+        "Event": "Interview",
+        "Indian Attire": {
+            "Male": "Plain Kurta with Trousers, Formal Vest",
+            "Female": "Simple Salwar Kameez, Plain Saree"
+        },
+        "Western Attire": {
+            "Male": "Formal Suit, Button-Down Shirt with Slacks",
+            "Female": "Blazer with Skirt, Formal Blouse with Pants"
+        }
+    },
+    {
+        "Event": "Beach",
+        "Indian Attire": {
+            "Male": "Short Kurta with Cotton Pants",
+            "Female": "Light Cotton Dress, Floral Saree"
+        },
+        "Western Attire": {
+            "Male": "Beach Shorts, T-Shirt",
+            "Female": "Beach Dress, Tank Top with Shorts"
+        }
+    },
+    {
+        "Event": "Gym",
+        "Indian Attire": {
+            "Male": "Track Pants, Athletic T-Shirt",
+            "Female": "Leggings, Athletic Top"
+        },
+        "Western Attire": {
+            "Male": "Workout Shorts, Gym Vest",
+            "Female": "Workout Shorts, Sports Bra with T-Shirt"
+        }
+    },
+    {
+        "Event": "Date",
+        "Indian Attire": {
+            "Male": "Kurta with Jeans, Smart Jacket",
+            "Female": "Long Kurti, Palazzo Pants"
+        },
+        "Western Attire": {
+            "Male": "Casual Blazer with Chinos, Polo Shirt",
+            "Female": "Summer Dress, Blouse with Skirt"
+        }
+    },
+    {
+        "Event": "Club",
+        "Indian Attire": {
+            "Male": "Casual Kurta, Jacket",
+            "Female": "Short Kurti with Skirt, Indo-Western Dress"
+        },
+        "Western Attire": {
+            "Male": "Button-Up Shirt with Jeans, Leather Jacket",
+            "Female": "Mini Dress, Stylish Blouse with Skinny Jeans"
+        }
+    },
+    {
+        "Event": "Travel",
+        "Indian Attire": {
+            "Male": "Loose Kurta, Comfortable Pants",
+            "Female": "Cotton Kurti with Leggings"
+        },
+        "Western Attire": {
+            "Male": "T-Shirt with Cargo Pants, Light Jacket",
+            "Female": "Comfortable Pants, T-Shirt"
+        }
+    },
+    {
+        "Event": "House Party",
+        "Indian Attire": {
+            "Male": "Casual Kurta, Chinos",
+            "Female": "Kurti with Jeans, Casual Saree"
+        },
+        "Western Attire": {
+            "Male": "Casual Shirt with Jeans, Pullover",
+            "Female": "Top with Denim Skirt, Casual Dress"
+        }
+    },
+    {
+        "Event": "Graduation",
+        "Indian Attire": {
+            "Male": "Simple Kurta with Trousers",
+            "Female": "Simple Saree, Formal Salwar Suit"
+        },
+        "Western Attire": {
+            "Male": "Suit with Tie, Formal Shirt",
+            "Female": "Formal Dress, Blouse with Skirt"
+        }
+    },
+    {
+        "Event": "Picnic",
+        "Indian Attire": {
+            "Male": "Light Kurta with Cotton Pants",
+            "Female": "Cotton Kurti, Comfortable Pants"
+        },
+        "Western Attire": {
+            "Male": "T-Shirt with Shorts, Sneakers",
+            "Female": "T-Shirt with Shorts, Sundress"
+        }
+    },
+    {
+        "Event": "Concert",
+        "Indian Attire": {
+            "Male": "Stylish Kurta with Jeans",
+            "Female": "Crop Top with Skirt, Indo-Western Dress"
+        },
+        "Western Attire": {
+            "Male": "Band T-Shirt with Jeans, Jacket",
+            "Female": "Tank Top with Jeans, Mini Skirt"
+        }
+    },
+    {
+        "Event": "Night Out",
+        "Indian Attire": {
+            "Male": "Kurta with Blazer",
+            "Female": "Party Saree, Indo-Western Dress"
+        },
+        "Western Attire": {
+            "Male": "Dress Shirt with Trousers",
+            "Female": "Cocktail Dress, Stylish Top with Jeans"
+        }
+    },
+    {
+        "Event": "Family Gathering",
+        "Indian Attire": {
+            "Male": "Simple Kurta with Pajama",
+            "Female": "Salwar Suit, Cotton Saree"
+        },
+        "Western Attire": {
+            "Male": "Sweater with Jeans",
+            "Female": "Long Skirt with Blouse, Casual Dress"
+        }
+    },
+    {
+        "Event": "Brunch",
+        "Indian Attire": {
+            "Male": "Cotton Kurta with Trousers",
+            "Female": "Casual Kurti with Leggings"
+        },
+        "Western Attire": {
+            "Male": "Polo Shirt with Shorts, Loafers",
+            "Female": "Floral Dress, Blouse with Pants"
+        }
+    }
+]

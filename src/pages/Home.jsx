@@ -25,22 +25,20 @@ export const Home = () => {
 
   const adjustModelForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -6, 2];
-    let rotation = [0.1, 6.2, 0];
+    let screenPosition = [0,1,10];
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
     } else {
-      screenScale = [4, 4, 4];
+      screenScale = [20, 20, 20];
     }
-    return [screenScale, screenPosition, rotation];
+    return [screenScale, screenPosition];
   }
-  const [ModelScale, ModelPosition, ModelRotation] = adjustModelForScreenSize();
+  const [ModelScale, ModelPosition] = adjustModelForScreenSize();
+  console.log(ModelPosition);
   const wardrobeScale = [3, 3, 3];
   const wardrobePosition = [0, -2, -4];
-  const mirrorScale = [50,50,20];
-  const mirrorPosition = [-40,10,-10];
-  let mirrorRotation= [0,3.5,0];
+  let mirrorRotation = [0, 3.5, 0];
 
   const navigate = useNavigate();
 
@@ -86,34 +84,24 @@ export const Home = () => {
                   scale={wardrobeScale}
                   castShadow
                   receiveShadow />
-                  <OrbitControls enableZoom={false}  minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} enableDamping={true} dampingFactor={0.1}/>
+                <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} enableDamping={true} dampingFactor={0.1} />
               </Suspense>
             </Canvas>
           </div>
         </div>
         <div className='canvas' style={{ height: '100vh', marginTop: '-80px' }}>
           <Canvas shadows
-            camera={{ position: [0, 0, 100], near: 0.1, far: 1000 }}
+            camera={{ fov: 70, position: [0, 0.5 , 0.6]}}
           >
             <Suspense fallback={<Loader />}>
               <directionalLight position={[1, 1, 1]} intensity={2} />
               <ambientLight intensity={0.5} />
               <hemisphereLight skycolor="#b1e1ff" groundColor="#000000" intensity={1} />
-              {/* <Mirror
-                position={mirrorPosition}
-                scale={mirrorScale}
-                castShadow
-                receiveShadow
-                rotation={mirrorRotation}
-              /> */}
               <Model
                 position={ModelPosition}
                 scale={ModelScale}
-                rotation={ModelRotation}
-                isRotating={isRotating}
-                setIsRotating={setIsRotating}
               />
-             
+
               {/* <Podium1/> */}
 
               {/* <Stage2

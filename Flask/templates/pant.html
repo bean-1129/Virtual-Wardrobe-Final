@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pant Options</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Pant Options</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Choose Your Pant</h2>
+            <ul>
+                <li><img src="{{ url_for('static', filename='pant7.jpg') }}" alt="Pant 1"></li>
+                <li><img src="{{ url_for('static', filename='pant21.png') }}" alt="Pant 2"></li>
+            </ul>
+        </section>
+
+        <section>
+            <a href="/">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Virtual Trial Room</p>
+    </footer>
+</body>
+</html>

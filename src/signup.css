@@ -1,22 +1,27 @@
 /* General styles */
 
   
-  .auth-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   
-  .auth-form-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
+}
+
+.auth-form-container {
+  /* background-color: rgba(255, 255, 255, 0.8); Semi-transparent background */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  background-image: url('src/imgslogo.png'); /* Path to your logo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
   
   h2 {
     text-align: center;

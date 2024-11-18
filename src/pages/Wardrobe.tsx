@@ -14,7 +14,6 @@ const style = { width: "100%", height: "100vh", border: "none", margin: 0 };
 const Wardrobe = () => {
   const [avatarUrl, setAvatarUrl] = useState<string | undefined>();
 
-  // Fetch avatar URL after login (assuming you're storing the token in localStorage)
   useEffect(() => {
     const fetchAvatarUrl = async () => {
       const token = localStorage.getItem('token');
@@ -23,7 +22,7 @@ const Wardrobe = () => {
           const response = await axios.get('http://localhost:5000/api/user', {
             headers: { Authorization: `Bearer ${token}` },
           });
-          setAvatarUrl(response.data.avatarUrl);  // Set the avatar URL from the server
+          setAvatarUrl(response.data.avatarUrl); 
           console.log(avatarUrl);
         } catch (error) {
           console.error('Failed to fetch avatar URL:', error);

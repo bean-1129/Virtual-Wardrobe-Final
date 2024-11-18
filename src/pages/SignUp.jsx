@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../login.css';
+import logo from '../imgs/logo.png'
 
 const SignupPage = () => {
   const [email, setEmail] = useState('');

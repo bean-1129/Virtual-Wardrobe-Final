@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Wardrobe Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .chatbot-container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            height: 90vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .chat-message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007BFF;
+            color: #fff;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        select, button {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .reset-button {
+            background-color: #dc3545;
+        }
+        .reset-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container" id="chatbot-container">
+        <h1>Clothing Recommendation</h1>
+        <div id="chat-messages"></div>
+        <div class="input-container" id="input-container">
+            <!-- The form elements will be dynamically added here -->
+        </div>
+        <button class="reset-button" id="reset-chat">Reset Chat</button>
+    </div>
+
+    <script>
+        // Elements
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatMessages = document.getElementById('chat-messages');
+        const inputContainer = document.getElementById('input-container');
+        const resetButton = document.getElementById('reset-chat');
+
+        // Start the conversation
+        let currentStep = 0;
+        const steps = [
+            { message: "Hi there! I'm your virtual wardrobe assistant. What event are you dressing up for?", field: "event", options: ["Wedding", "Office", "Party", "Sports", "Formal Dinner", "Casual Outing", "Festival", "Interview", "Beach", "Gym", "Date", "Club", "Travel", "Houseparty", "Graduation", "Picnic", "Concert", "Nightout", "Family Gathering", "Brunch"] },
+            { message: "What style are you going for?", field: "style", options: ["Indian", "Western"] },
+            { message: "What's your gender?", field: "gender", options: ["Male", "Female"] }
+        ];
+
+        function addMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message', sender);
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatbotContainer.scrollTop = chatbotContainer.scrollHeight;
+        }
+
+        function createSelectField(options) {
+            const select = document.createElement('select');
+            // Create a placeholder for the first option (optional)
+            const firstOption = document.createElement('option');
+            firstOption.disabled = true;
+            firstOption.selected = true;
+            firstOption.textContent = "Select an option";
+            select.appendChild(firstOption);
+
+            // Create options from the given array
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                select.appendChild(opt);
+            });
+
+            return select;
+        }
+
+        async function handleStep() {
+            if (currentStep < steps.length) {
+                const step = steps[currentStep];
+                addMessage(step.message, 'bot-message');
+                const select = createSelectField(step.options);
+                select.addEventListener('change', (event) => {
+                    const userResponse = event.target.value;
+                    if (userResponse !== "Select an option") {
+                        addMessage(userResponse, 'user-message');
+                        storeUserResponse(step.field, userResponse);
+                        currentStep++;
+                        inputContainer.innerHTML = '';  // Clear input
+                        handleStep();  // Proceed to next step
+                    }
+                });
+                inputContainer.appendChild(select);
+            } else {
+                // Send request to backend and show result
+                const data = gatherFormData();
+                await getRecommendation(data);
+            }
+        }
+
+        function storeUserResponse(field, value) {
+            window.localStorage.setItem(field, value);
+        }
+
+        function gatherFormData() {
+            return {
+                event: window.localStorage.getItem('event'),
+                style: window.localStorage.getItem('style'),
+                gender: window.localStorage.getItem('gender')
+            };
+        }
+
+        async function getRecommendation(data) {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/recommendation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    addMessage(`Recommended Attire: ${result.recommendation}`, 'bot-message');
+                } else {
+                    addMessage(`Error: ${result.error}`, 'bot-message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                addMessage('An error occurred while fetching the recommendation.', 'bot-message');
+            }
+        }
+
+        // Reset chat
+        function resetChat() {
+            // Clear localStorage and messages
+            window.localStorage.clear();
+            chatMessages.innerHTML = '';
+            inputContainer.innerHTML = '';
+            currentStep = 0;
+            handleStep();
+        }
+
+        // Handle reset button click
+        resetButton.addEventListener('click', resetChat);
+
+        // Start the conversation
+        handleStep();
+    </script>
+</body>
+</html>

@@ -11,6 +11,7 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
     proxy: {
+      '/predict': 'http://127.0.0.1:5000',
       '/api': {
         target: 'https://api.readyplayer.me', // Target API endpoint
         changeOrigin: true,

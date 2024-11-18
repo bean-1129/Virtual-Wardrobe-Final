@@ -12,6 +12,8 @@ import FallCollectionPage from './pages/FallCollection'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Signup from './pages/SignUp'
+import AR from './pages/AR.jsx'
+import ChatBot from './pages/ChatBot.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +37,8 @@ function App() {
           <Route path="/fall-collection" element={<FallCollectionPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/wardrobe' element={<Wardrobe />} />
+          <Route path='/ar' element={<AR/>} />
+          <Route path='/chatbot' element={<ChatBot/>} />
           <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         </Routes>

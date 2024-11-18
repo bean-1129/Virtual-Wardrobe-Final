@@ -38,6 +38,12 @@ export const Navbar = () => {
         <NavLink to="/wardrobe" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
           <p>Wardrobe</p>
         </NavLink>
+        <NavLink to="/ar" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
+          <p>Try On</p>
+        </NavLink>
+        <NavLink to="/chatbot" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
+          <p>ChatBot</p>
+        </NavLink>
         <NavLink to="/about" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
           <p>About Us</p>
         </NavLink>
