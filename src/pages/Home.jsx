@@ -18,6 +18,7 @@ import fallCover from '../assets/fallCover.jpg';
 import WardrobeModel from '../models/WardrobeModel'
 // import Podium1 from '../models/Podium'
 import Mirror from '../models/Mirror'
+import Podium from '../models/Podium'
 
 export const Home = () => {
 
@@ -35,7 +36,9 @@ export const Home = () => {
     return [screenScale, screenPosition];
   }
   const [ModelScale, ModelPosition] = adjustModelForScreenSize();
-  console.log(ModelPosition);
+  const PodiumScale = [10,10,10];
+  const PodiumPosition = [0,0,4];
+  // console.log(ModelPosition);
   const wardrobeScale = [3, 3, 3];
   const wardrobePosition = [0, -2, -4];
   let mirrorRotation = [0, 3.5, 0];
@@ -97,12 +100,15 @@ export const Home = () => {
               <directionalLight position={[1, 1, 1]} intensity={2} />
               <ambientLight intensity={0.5} />
               <hemisphereLight skycolor="#b1e1ff" groundColor="#000000" intensity={1} />
+              {/* <Podium 
+              position = {PodiumPosition}
+              scale = {PodiumScale} /> */}
               <Model
                 position={ModelPosition}
                 scale={ModelScale}
               />
 
-              {/* <Podium1/> */}
+             
 
               {/* <Stage2
         position={stagePosition}
