@@ -16,9 +16,6 @@ import winterCover from '../assets/winterCover.jpg';
 import springCover from '../assets/springCover.jpg';
 import fallCover from '../assets/fallCover.jpg';
 import WardrobeModel from '../models/WardrobeModel'
-// import Podium1 from '../models/Podium'
-import Mirror from '../models/Mirror'
-import Podium from '../models/Podium'
 
 export const Home = () => {
 
